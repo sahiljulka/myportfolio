@@ -188,9 +188,9 @@ section.services {
       column-gap: 2rem;
 
       .card {
-        background-color: $pure;
-        padding: 1rem;
         text-align: center;
+        height: 300px;
+        width: 300px;
         position: relative;
 
         img {
@@ -203,36 +203,51 @@ section.services {
           transform: translateX(-50%);
         }
 
-        h2 {
-          padding-top: 3rem;
-          font-weight: 400;
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-        }
-
-        p {
-          color: $ternary;
-          line-height: 1.6rem;
-        }
-
-        .overlay {
-          font-family: "MyWebFont";
-          padding-top: 5rem;
-          transition: all 0.3s ease;
-          height: calc(100% - 5rem);
+        .inner-card {
+          position: relative;
+          height: 100%;
           width: 100%;
+          transition: transform 0.6s;
+          transform-style: preserve-3d;
+        }
+
+        &:hover .inner-card {
+          transform: rotateY(180deg);
+        }
+
+        .front,
+        .back {
+          backface-visibility: hidden;
           position: absolute;
-          top: 0;
-          left: 0;
-          background: $primary;
-          opacity: 0;
+          width: 100%;
+          height: 100%;
+        }
+
+        .front {
+          background-color: $pure;
+
+          h2 {
+            padding-top: 3rem;
+            font-weight: 400;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+          }
+
+          p {
+            color: $ternary;
+            line-height: 1.6rem;
+            padding: 1rem;
+          }
+        }
+
+        .back {
+          font-family: "MyWebFont";
+          background-color: $primary;
+          transform: rotateY(180deg);
 
           ul {
             list-style: none;
-          }
-
-          &:hover {
-            opacity: 1;
+            margin-top: 3rem;
           }
         }
       }

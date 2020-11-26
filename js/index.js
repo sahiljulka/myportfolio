@@ -1,8 +1,14 @@
 import "../css/styles.scss";
 const Handlebars = require("handlebars");
-const $ = document.querySelector.bind(document);
+const $ = document.querySelectorAll.bind(document);
 
-const workItemContainer = $(".content");
+const workItemContainer = $(".content")[0];
+const hamBurger = $(".hamburger")[0];
+const bars = $(".hamburger span");
+const mobileNav = $(".mobile-nav")[0];
+const mobileNavLinks = $(".mobile-nav>ul li >a");
+
+let isActive = true;
 
 var source = document.getElementById("work-item-template").innerHTML;
 
@@ -28,3 +34,37 @@ var project2 = {
 
 addWorkItemToContainer(project1);
 addWorkItemToContainer(project2);
+
+hamBurger.addEventListener("click", function () {
+  if (isActive) {
+    showMobileNav();
+  } else {
+    hideMobileNav();
+  }
+});
+
+function hideMobileNav() {
+  bars[0].style.transform = "rotate(0deg)";
+  bars[1].style.opacity = "1";
+  bars[2].style.transform = "rotate(0deg)";
+  mobileNav.style.opacity = "0";
+  mobileNav.style.zIndex = 0;
+  isActive = !isActive;
+}
+
+function showMobileNav() {
+  bars[0].style.transform = "rotate(45deg)";
+  bars[1].style.opacity = "0";
+  bars[2].style.transform = "rotate(-45deg)";
+  mobileNav.style.opacity = "1";
+  mobileNav.style.zIndex = 11;
+  isActive = !isActive;
+}
+
+(() => {
+  mobileNavLinks.forEach((element) => {
+    element.addEventListener("click", () => {
+      hideMobileNav();
+    });
+  });
+})();

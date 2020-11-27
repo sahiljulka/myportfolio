@@ -22,14 +22,14 @@ var project1 = {
   title: "Video Chat",
   githublink: "https://github.com/sahiljulka/video-conference-app",
   urllink: "https://video2chat.herokuapp.com/",
-  backgroundLink: "../assets/video2chat.png",
+  backgroundLink: "assets/video2chat.png",
 };
 
 var project2 = {
   title: "File Share Chat",
   githublink: "https://github.com/sahiljulka/file-share",
   urllink: "https://sendit123.herokuapp.com/",
-  backgroundLink: "../assets/filesharee.png",
+  backgroundLink: "assets/filesharee.png",
 };
 
 addWorkItemToContainer(project1);

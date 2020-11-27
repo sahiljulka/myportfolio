@@ -20,6 +20,7 @@
     "chalk": "^4.1.0",
     "css-loader": "^4.0.0",
     "express": "^4.17.1",
+    "gh-pages": "^3.1.0",
     "handlebars": "^4.7.6",
     "open": "^7.1.0",
     "path": "^0.12.7",

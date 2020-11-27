@@ -3,12 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "homepage": "https://sahiljulka.github.io/myportfolio/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "cd build-scripts && babel-node startMessage.js && babel-node server.js",
     "start-live": "webpack-dev-server",
     "webpack-start-dev": "webpack --watch --config webpack.dev.config.js",
-    "webpack-start-prod": "webpack --config webpack.prod.config.js"
+    "webpack-start-prod": "webpack --config webpack.prod.config.js",
+    "predeploy":"yarn webpack-start-prod",
+    "deploy":"gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",

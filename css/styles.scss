@@ -86,10 +86,18 @@ html {
 .btn-primary {
   background: $primary;
   color: $dark;
+
+  a {
+    color: $dark;
+    text-decoration: none;
+  }
+
   &:hover {
+    a {
+      color: $primary;
+    }
     background: transparent;
     border-color: $primary;
-    color: $primary;
   }
 }
 

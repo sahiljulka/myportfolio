@@ -32,8 +32,16 @@ var project2 = {
   backgroundLink: "assets/filesharee.png",
 };
 
+var project3 = {
+  title: "Pizza Order App",
+  githublink: "https://github.com/sahiljulka/pizza-order-app",
+  urllink: "https://pizza-ordr.herokuapp.com",
+  backgroundLink: "assets/pizza-app.jpeg",
+};
+
 addWorkItemToContainer(project1);
 addWorkItemToContainer(project2);
+addWorkItemToContainer(project3);
 
 hamBurger.addEventListener("click", function () {
   if (isActive) {
